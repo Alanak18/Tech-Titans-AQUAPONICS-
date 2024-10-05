@@ -1,7 +1,11 @@
 # Tech-Titans-AQUAPONICS-
 
-# Aquaponics System with AI-Powered Decision Support
-Overview
+# Smart Aquaponics An AI Driven System for Sustaianble Farming
+
+![image](https://github.com/user-attachments/assets/b667087e-0698-4a38-91ff-ad37fd4cabe1)
+
+
+# Overview
 The envisaged project employs an AI approach for optimizing the management and performance of the aquaponics system with a decision-support system that is driven by real-time sensor data to predict and automate optimum control actions for maintaining desired water quality conditions. The overall task is split into two primary constituents.
 
 1. **Standard LSTM Neural Network Implementation**: Long Short-Term Memory model development and training for action predictions based on time-series sensor readings.
@@ -58,7 +62,69 @@ The trained LSTM model will, in real-time, predict the control actions to be car
 
 ---
 
-## 4. Utilizing Intel-Optimized Libraries
+ ## 4. Block diagram and stimulation
+
+  ![image](https://github.com/user-attachments/assets/f86ea48f-3855-40da-bfc6-d03cafba7cbc)
+  
+  Integrating a simulated pH sensor in the Proteus software can help visualize and validate the functioning of your aquaponics system before deploying physical components.
+  This provides us the basic idea of how the senors works.
+
+  ![image](https://github.com/user-attachments/assets/543b4d11-4f32-4561-861f-15264b3059c5)
+
+  This is an general blockdiagram of how the system works:
+  Raw Sensors:
+
+This block represents various sensors placed in the aquaponics system to measure key environmental parameters like pH, temperature, dissolved oxygen (DO), and ammonia levels.
+The sensors generate real-time data that will be used to monitor the health and balance of the aquatic environment.
+ESP 8266:
+
+The ESP 8266 is a Wi-Fi-enabled microcontroller that captures the raw sensor data and sends it to the cloud platform for further processing.
+It acts as a bridge between the physical sensors and the data processing pipeline by transmitting sensor readings via the internet.
+Adafruit IO:
+
+Adafruit IO is a cloud platform used to collect, visualize, and store sensor data.
+It receives data from the ESP 8266 and organizes it into structured datasets, making it accessible for machine learning algorithms.
+Integrating Dataset:
+
+This step involves aggregating the incoming data streams from different sensors into a single dataset.
+It ensures that all sensor readings are synchronized and formatted properly for training the AI model.
+Data Split:
+
+The integrated dataset is split into training and testing datasets.
+The training dataset is used to train the AI model, while the testing dataset is reserved for evaluating the model's performance.
+Train Data:
+
+This block represents the dataset prepared for training the model. The training data contains historical records of sensor readings and the corresponding actions taken.
+Algorithm (LSTM):
+
+The AI algorithm used here is an LSTM (Long Short-Term Memory) network, a type of recurrent neural network (RNN) suited for time-series analysis.
+LSTMs are ideal for analyzing sequential data like sensor readings, capturing temporal dependencies to predict necessary actions.
+Trained Model:
+
+After the training process, the LSTM algorithm produces a trained model capable of making predictions based on new input data.
+The model learns patterns in sensor data and identifies which actions (e.g., increasing nutrients, adjusting water flow) are needed to maintain a balanced system.
+Test Data:
+
+The testing dataset is fed into the trained model to validate its accuracy.
+The test data contains unseen sequences of sensor readings that the model has not encountered before, helping to assess its generalization capability.
+Prediction Results:
+
+The trained model outputs predictions based on the test data, suggesting the optimal actions for given sensor conditions.
+These predictions are compared against the expected outcomes to measure the model’s performance.
+Calculate Model Performance:
+
+This step involves calculating various performance metrics, such as accuracy, precision, and recall, to evaluate how well the model performs.
+It helps determine if the model is reliable enough for real-world implementation.
+Final Model:
+
+Once the model is evaluated and tuned, it is finalized for deployment.
+The final model is the one that will be used to make real-time decisions based on live sensor data.
+Result (Alert if Required):
+
+The final output of the system is an action or alert based on the sensor readings.
+If the system detects any anomaly or condition that requires intervention (e.g., a sudden drop in pH), it can trigger an alert or automatically adjust system parameters.
+
+## 5. Utilizing Intel-Optimized Libraries
 ### Objective:
 For this, they have various specialized libraries, like **Intel TensorFlow** and **Intel Extension for Scikit-learn**, which are basically conceived to take a thrust in machine learning model performance on Intel hardware by optimizing deep learning operations, like matrix multiplications, data transformation using low-level optimizations.
 
@@ -124,72 +190,22 @@ The results are presented in a table or graph so that the benefits from the opti
 - **Real-Time Deployment**: The model shall then be integrated with live IoT sensors for real-time decision support.
 - **IoT Automation**: These predictions can then automate the physical elements such as pumps and nutrient dispensers.
 
-  ## 9. Block diagram and stimulation
+## **9. Leaf Disease System**
+-  It aims to develop an AI-powered monitoring system for detecting leaf diseases in aquaponics setups. By leveraging advanced machine learning techniques and Intel’s optimization libraries, this system ensures early detection and management of plant diseases, promoting healthier plant growth and a more balanced aquaponic ecosystem.
+-  Real-time Disease Detection: Utilizes computer vision and deep learning models to identify and classify leaf diseases in real-time.
+Optimized Performance: Integrates Intel’s OpenVINO toolkit and other performance libraries to enhance inference speed and accuracy.
+User-friendly Interface: Provides a dashboard for monitoring plant health, visualizing data, and receiving alerts.
+Scalable and Modular: Designed to be easily scalable and adaptable to different aquaponic systems.
 
-  ![image](https://github.com/user-attachments/assets/f86ea48f-3855-40da-bfc6-d03cafba7cbc)
-  
-  Integrating a simulated pH sensor in the Proteus software can help visualize and validate the functioning of your aquaponics system before deploying physical components.
-  This provides us the basic idea of how the senors works.
 
-  ![image](https://github.com/user-attachments/assets/543b4d11-4f32-4561-861f-15264b3059c5)
 
-  This is an general blockdiagram of how the system works:
-  Raw Sensors:
-
-This block represents various sensors placed in the aquaponics system to measure key environmental parameters like pH, temperature, dissolved oxygen (DO), and ammonia levels.
-The sensors generate real-time data that will be used to monitor the health and balance of the aquatic environment.
-ESP 8266:
-
-The ESP 8266 is a Wi-Fi-enabled microcontroller that captures the raw sensor data and sends it to the cloud platform for further processing.
-It acts as a bridge between the physical sensors and the data processing pipeline by transmitting sensor readings via the internet.
-Adafruit IO:
-
-Adafruit IO is a cloud platform used to collect, visualize, and store sensor data.
-It receives data from the ESP 8266 and organizes it into structured datasets, making it accessible for machine learning algorithms.
-Integrating Dataset:
-
-This step involves aggregating the incoming data streams from different sensors into a single dataset.
-It ensures that all sensor readings are synchronized and formatted properly for training the AI model.
-Data Split:
-
-The integrated dataset is split into training and testing datasets.
-The training dataset is used to train the AI model, while the testing dataset is reserved for evaluating the model's performance.
-Train Data:
-
-This block represents the dataset prepared for training the model. The training data contains historical records of sensor readings and the corresponding actions taken.
-Algorithm (LSTM):
-
-The AI algorithm used here is an LSTM (Long Short-Term Memory) network, a type of recurrent neural network (RNN) suited for time-series analysis.
-LSTMs are ideal for analyzing sequential data like sensor readings, capturing temporal dependencies to predict necessary actions.
-Trained Model:
-
-After the training process, the LSTM algorithm produces a trained model capable of making predictions based on new input data.
-The model learns patterns in sensor data and identifies which actions (e.g., increasing nutrients, adjusting water flow) are needed to maintain a balanced system.
-Test Data:
-
-The testing dataset is fed into the trained model to validate its accuracy.
-The test data contains unseen sequences of sensor readings that the model has not encountered before, helping to assess its generalization capability.
-Prediction Results:
-
-The trained model outputs predictions based on the test data, suggesting the optimal actions for given sensor conditions.
-These predictions are compared against the expected outcomes to measure the model’s performance.
-Calculate Model Performance:
-
-This step involves calculating various performance metrics, such as accuracy, precision, and recall, to evaluate how well the model performs.
-It helps determine if the model is reliable enough for real-world implementation.
-Final Model:
-
-Once the model is evaluated and tuned, it is finalized for deployment.
-The final model is the one that will be used to make real-time decisions based on live sensor data.
-Result (Alert if Required):
-
-The final output of the system is an action or alert based on the sensor readings.
-If the system detects any anomaly or condition that requires intervention (e.g., a sudden drop in pH), it can trigger an alert or automatically adjust system parameters.
+ 
 
 
   
 
 
-## 10. References***
+## 10. References
+
 Sensor Based Aquaponics Fish Pond Dataset: [Kaggle Link](https://www.kaggle.com/datasets/ogbuokiriblessing/sensor-based-aquaponics-fish-pond-datasets).
 Intel oneAPI Documentation: [Intel oneAPI](https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html).
