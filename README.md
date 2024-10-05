@@ -1,4 +1,4 @@
-# Tech-Titans-AQUAPONICS-
+# Tech-Titans-AQUAPONICS-Team Code: A0205
 
 # Smart Aquaponics An AI Driven System for Sustaianble Farming
 
@@ -126,7 +126,7 @@ The final output of the system is an action or alert based on the sensor reading
 If the system detects any anomaly or condition that requires intervention (e.g., a sudden drop in pH), it can trigger an alert or automatically adjust system parameters.
 
 ## 5. Utilizing Intel-Optimized Libraries
-### Objective:
+
 For this, they have various specialized libraries, like **Intel TensorFlow** and **Intel Extension for Scikit-learn**, which are basically conceived to take a thrust in machine learning model performance on Intel hardware by optimizing deep learning operations, like matrix multiplications, data transformation using low-level optimizations.
 
 ### **Intel TensorFlow:**
@@ -156,7 +156,7 @@ The project documents and compares, through training time, memory usage, and CPU
 
 
 ## **6. Performance Comparison**
-### **Objective:**
+
 The performance of the standard LSTM model is compared against the variant optimized by Intel. Metrics for comparison are defined below:
 
 1.  **Training Time**: Compare reduction in training time using TensorFlow that was optimized by Intel.
