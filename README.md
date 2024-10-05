@@ -5,6 +5,7 @@
 ![image](https://github.com/user-attachments/assets/b667087e-0698-4a38-91ff-ad37fd4cabe1)
 
 
+## Aquaponics is a technique of combination of Aqua culture and hydroponics which helps us to do farming in the most sustainable way . This technique of farming can be implented even in the cities in balcony or in the terrace. This is an soilless mode of farming the nutrients which are requierd by the plants will be provided by the fishes inside the pond. Even futher the nutrients can added manually as well.But this was tough to monitor all by the humans , so we propose a solution based on AI to moniter and take desicions according to the level of pH, Dissolved oxygen, water  level , ammonia,niterate and etc.
 # Overview
 The envisaged project employs an AI approach for optimizing the management and performance of the aquaponics system with a decision-support system that is driven by real-time sensor data to predict and automate optimum control actions for maintaining desired water quality conditions. The overall task is split into two primary constituents.
 
